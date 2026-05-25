@@ -1,0 +1,321 @@
+/* ════════════════════════════════════════════════════════
+   PlumbCo — Enhanced Design System
+   Layered on top of Tailwind CDN
+   ════════════════════════════════════════════════════════ */
+
+/* ─── Custom Scrollbar ──────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #F8F8F6; }
+::-webkit-scrollbar-thumb { background: #1B2D4F; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #FF6B2B; }
+
+/* ─── Scroll-Reveal ─────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s cubic-bezier(.22,1,.36,1),
+              transform .7s cubic-bezier(.22,1,.36,1);
+  will-change: opacity, transform;
+}
+.reveal.visible  { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: .1s; }
+.reveal-d2 { transition-delay: .2s; }
+.reveal-d3 { transition-delay: .3s; }
+.reveal-d4 { transition-delay: .4s; }
+.reveal-d5 { transition-delay: .5s; }
+.reveal-d6 { transition-delay: .6s; }
+.reveal-d7 { transition-delay: .7s; }
+.reveal-d8 { transition-delay: .8s; }
+
+/* ─── Navbar Scroll State ───────────────────────────── */
+nav { transition: box-shadow .3s ease; }
+.nav-scrolled { box-shadow: 0 4px 32px rgba(0,0,0,.35) !important; }
+
+/* ─── CTA Button Glow ───────────────────────────────── */
+.btn-glow {
+  transition: transform .2s cubic-bezier(.22,1,.36,1),
+              box-shadow .2s ease !important;
+}
+.btn-glow:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 36px rgba(255,107,43,.48) !important;
+}
+.btn-glow:active { transform: translateY(-1px) !important; }
+
+/* ─── Navy Button Glow ──────────────────────────────── */
+.btn-navy-glow {
+  transition: transform .2s cubic-bezier(.22,1,.36,1),
+              box-shadow .2s ease !important;
+}
+.btn-navy-glow:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 36px rgba(27,45,79,.5) !important;
+}
+
+/* ─── Service Card Icon Hover ────────────────────────── */
+.icon-wrap {
+  transition: transform .35s cubic-bezier(.22,1,.36,1),
+              background-color .35s ease !important;
+}
+.group:hover .icon-wrap {
+  transform: scale(1.12) rotate(-5deg) !important;
+  background-color: rgba(255,107,43,.14) !important;
+}
+
+/* ─── Testimonial Quote Mark ─────────────────────────── */
+.quote-card { position: relative; overflow: hidden; }
+.quote-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 4px;
+  right: 18px;
+  font-size: 108px;
+  line-height: 1;
+  color: #FF6B2B;
+  opacity: .065;
+  font-family: Georgia, serif;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── FAQ Smooth Transition ──────────────────────────── */
+details summary { list-style: none; cursor: pointer; }
+details summary::-webkit-details-marker { display: none; }
+details[open] .faq-chevron { transform: rotate(180deg); }
+.faq-chevron {
+  transition: transform .25s cubic-bezier(.22,1,.36,1);
+  flex-shrink: 0;
+}
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s cubic-bezier(.22,1,.36,1);
+}
+details[open] .faq-content { max-height: 420px; }
+
+/* ─── Gradient Accent Text ───────────────────────────── */
+.text-orange-gradient {
+  background: linear-gradient(135deg, #FF6B2B 0%, #FF9A60 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Hero Glow Orbs ─────────────────────────────────── */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  pointer-events: none;
+  opacity: 0;
+  animation: orb-fade 1.2s ease .4s forwards;
+}
+@keyframes orb-fade {
+  to { opacity: 1; }
+}
+
+/* ─── Hero Entrance Animation ────────────────────────── */
+.hero-enter {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-in .8s cubic-bezier(.22,1,.36,1) both;
+}
+.hero-enter-d1 { animation-delay: .1s; }
+.hero-enter-d2 { animation-delay: .22s; }
+.hero-enter-d3 { animation-delay: .34s; }
+.hero-enter-d4 { animation-delay: .46s; }
+.hero-enter-d5 { animation-delay: .58s; }
+.hero-enter-d6 { animation-delay: .7s; }
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ─── Hero Image Card ────────────────────────────────── */
+.hero-card-enter {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: hero-in .7s cubic-bezier(.22,1,.36,1) .85s both;
+}
+
+/* ─── Step Ring Decoration ───────────────────────────── */
+.step-ring {
+  position: relative;
+  z-index: 1;
+}
+.step-ring::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 24px;
+  border: 2px dashed rgba(255,107,43,.28);
+  animation: spin-ring 18s linear infinite;
+  pointer-events: none;
+}
+@keyframes spin-ring {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Live Dispatch Indicator ────────────────────────── */
+.live-dot {
+  position: relative;
+  display: inline-flex;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+.live-dot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: live-ping 1.8s cubic-bezier(0,0,.2,1) infinite;
+}
+@keyframes live-ping {
+  75%, 100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ─── Trust Bar Item ─────────────────────────────────── */
+.trust-item {
+  transition: transform .2s ease;
+}
+.trust-item:hover { transform: translateY(-2px); }
+
+/* ─── Team Card Hover ────────────────────────────────── */
+.team-card {
+  transition: transform .3s cubic-bezier(.22,1,.36,1),
+              box-shadow .3s ease;
+}
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(27,45,79,.12);
+}
+
+/* ─── Star Rating ────────────────────────────────────── */
+.star-fill {
+  color: #FBBF24;
+}
+
+/* ─── Rating Bar ─────────────────────────────────────── */
+.rating-bar-track {
+  height: 8px;
+  background: #E5E7EB;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.rating-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF6B2B, #FF9A5C);
+  border-radius: 999px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(.22,1,.36,1);
+}
+.rating-bar-fill.animated { }
+
+/* ─── Mobile Menu Entrance ───────────────────────────── */
+@keyframes menu-slide-down {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: none; }
+}
+#mobile-menu:not(.hidden) {
+  animation: menu-slide-down .2s ease both;
+}
+
+/* ─── Section Label ──────────────────────────────────── */
+.section-label {
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: .7rem;
+  font-weight: 600;
+}
+
+/* ─── Feature Icon Hover ─────────────────────────────── */
+.feature-icon {
+  transition: transform .3s cubic-bezier(.22,1,.36,1),
+              background-color .3s ease;
+}
+.feature-icon:hover {
+  transform: scale(1.08);
+  background-color: rgba(255,107,43,.18) !important;
+}
+
+/* ─── Stat Counter Entrance ──────────────────────────── */
+@keyframes count-in {
+  from { opacity: 0; transform: scale(.88) translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+.count-in {
+  animation: count-in .55s cubic-bezier(.22,1,.36,1) both;
+}
+.count-in-d1 { animation-delay: .1s; }
+.count-in-d2 { animation-delay: .2s; }
+.count-in-d3 { animation-delay: .3s; }
+.count-in-d4 { animation-delay: .4s; }
+
+/* ─── Image Parallax Effect ──────────────────────────── */
+.img-hover-lift {
+  transition: transform .4s cubic-bezier(.22,1,.36,1),
+              box-shadow .4s ease;
+}
+.img-hover-lift:hover {
+  transform: scale(1.012);
+  box-shadow: 0 28px 64px rgba(0,0,0,.22) !important;
+}
+
+/* ─── Badge Hover ────────────────────────────────────── */
+.badge-hover {
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.badge-hover:hover {
+  background: rgba(255,255,255,.18) !important;
+  border-color: rgba(255,255,255,.6) !important;
+  transform: translateY(-1px);
+}
+
+/* ─── Noise Texture Overlay ──────────────────────────── */
+.noise-texture { position: relative; }
+.noise-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: .022;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* ─── Horizontal Rule ────────────────────────────────── */
+.hr-orange {
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B2B, transparent);
+  border: none;
+  border-radius: 2px;
+  margin: 0;
+}
+
+/* ─── Form Enhancement ───────────────────────────────── */
+input, select, textarea {
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #FF6B2B !important;
+  box-shadow: 0 0 0 3px rgba(255,107,43,.12) !important;
+  outline: none !important;
+}
+
+/* ─── CTA Section Pattern ────────────────────────────── */
+.cta-pattern {
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+    radial-gradient(circle at 80% 50%, rgba(255,255,255,.06) 0%, transparent 60%);
+}
+
+/* ─── Green Badge ────────────────────────────────────── */
+.badge-green {
+  background: rgba(34,197,94,.15);
+  border: 1px solid rgba(34,197,94,.3);
+  color: #16a34a;
+}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Book Online | PlumbCo Sydney</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { navy: '#1B2D4F', orange: '#FF6B2B', cream: '#F8F8F6' },
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans bg-white text-[#1A1A1A]">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#1B2D4F]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <div class="w-9 h-9 bg-[#FF6B2B] rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="white" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z"/></svg>
+          </div>
+          <span class="text-white text-xl font-extrabold tracking-tight">Plumb<span class="text-[#FF6B2B]">Co</span></span>
+        </a>
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="index.html" class="text-white/70 hover:text-white font-medium transition-colors text-sm">Home</a>
+          <a href="services.html" class="text-white/70 hover:text-white font-medium transition-colors text-sm">Services</a>
+          <a href="about.html" class="text-white/70 hover:text-white font-medium transition-colors text-sm">About</a>
+          <a href="reviews.html" class="text-white/70 hover:text-white font-medium transition-colors text-sm">Reviews</a>
+          <a href="contact.html" class="text-white font-semibold text-sm border-b-2 border-[#FF6B2B] pb-0.5">Contact</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="tel:1300758622" class="hidden sm:flex items-center gap-1.5 text-white font-semibold text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#FF6B2B" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+            1300 758 622
+          </a>
+          <a href="contact.html" class="btn-glow bg-[#FF6B2B] hover:bg-[#E55A1B] text-white font-bold px-5 py-2.5 rounded-lg text-sm shadow-md">Book Online</a>
+          <button id="menu-btn" class="lg:hidden text-white p-1.5 rounded-md hover:bg-white/10 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="lg:hidden hidden border-t border-white/10 py-4 space-y-1">
+        <a href="index.html" class="block text-white/80 hover:text-white font-medium py-2.5 px-3 rounded-lg hover:bg-white/10">Home</a>
+        <a href="services.html" class="block text-white/80 hover:text-white font-medium py-2.5 px-3 rounded-lg hover:bg-white/10">Services</a>
+        <a href="about.html" class="block text-white/80 hover:text-white font-medium py-2.5 px-3 rounded-lg hover:bg-white/10">About</a>
+        <a href="reviews.html" class="block text-white/80 hover:text-white font-medium py-2.5 px-3 rounded-lg hover:bg-white/10">Reviews</a>
+        <a href="contact.html" class="block text-white font-semibold py-2.5 px-3 rounded-lg bg-white/10">Contact</a>
+        <a href="tel:1300758622" class="block text-[#FF6B2B] font-bold py-2.5 px-3">📞 1300 758 622</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="bg-[#1B2D4F] pt-28 lg:pt-36 pb-16 lg:pb-20 noise-texture overflow-hidden relative">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 28px 28px;"></div>
+    <div class="hero-orb w-80 h-80 bg-[#FF6B2B] top-[-40px] right-[10%]" style="opacity:.07;"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="section-label text-[#FF6B2B] mb-4 hero-enter">Get In Touch</p>
+      <h1 class="text-4xl lg:text-5xl font-black text-white mb-5 tracking-tight hero-enter hero-enter-d1">Need a Plumber Fast?<br/>Contact Us 24/7</h1>
+      <p class="text-white/70 text-lg max-w-xl mx-auto hero-enter hero-enter-d2">We're here for emergencies and routine jobs across all of Greater Sydney. Call now or book online — $0 call out fee, fixed price, no surprises.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO BLOCKS -->
+  <section class="bg-white py-14 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <a href="tel:1300758622" class="btn-glow group flex flex-col items-center text-center p-6 rounded-2xl bg-[#FF6B2B] text-white transition-all shadow-lg reveal reveal-d1">
+          <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          </div>
+          <p class="font-extrabold text-lg">1300 758 622</p>
+          <p class="text-white/80 text-sm mt-1">Tap to call — 24/7</p>
+        </a>
+        <a href="mailto:hello@plumbco.com.au" class="team-card flex flex-col items-center text-center p-6 rounded-2xl bg-[#F8F8F6] hover:bg-gray-100 transition-all border border-gray-200 reveal reveal-d2">
+          <div class="w-10 h-10 bg-[#FF6B2B]/10 rounded-xl flex items-center justify-center mb-3 text-[#FF6B2B]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          </div>
+          <p class="font-bold text-[#1B2D4F] text-sm">hello@plumbco.com.au</p>
+          <p class="text-gray-500 text-sm mt-1">We reply within 2 hours</p>
+        </a>
+        <div class="team-card flex flex-col items-center text-center p-6 rounded-2xl bg-[#F8F8F6] border border-gray-200 reveal reveal-d3">
+          <div class="w-10 h-10 bg-[#FF6B2B]/10 rounded-xl flex items-center justify-center mb-3 text-[#FF6B2B]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+          </div>
+          <p class="font-bold text-[#1B2D4F] text-sm">Greater Sydney, NSW</p>
+          <p class="text-gray-500 text-sm mt-1">All suburbs covered</p>
+        </div>
+        <div class="team-card flex flex-col items-center text-center p-6 rounded-2xl bg-[#F8F8F6] border border-gray-200 reveal reveal-d4">
+          <div class="w-10 h-10 bg-[#FF6B2B]/10 rounded-xl flex items-center justify-center mb-3 text-[#FF6B2B]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <p class="font-bold text-[#1B2D4F] text-sm">24/7 — Every Day</p>
+          <p class="text-gray-500 text-sm mt-1">Including public holidays</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM + SIDEBAR -->
+  <section class="bg-[#F8F8F6] py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16">
+
+        <!-- FORM -->
+        <div class="reveal">
+          <p class="section-label text-[#FF6B2B] mb-3">Book a Plumber</p>
+          <h2 class="text-3xl font-black text-[#1B2D4F] mb-2 tracking-tight">Submit a Booking Request</h2>
+          <p class="text-gray-500 mb-8">We'll call you back within 30 minutes to confirm. For urgent emergencies, call us directly on <a href="tel:1300758622" class="text-[#FF6B2B] font-bold">1300 758 622</a>.</p>
+
+          <form id="booking-form" class="space-y-5" onsubmit="handleSubmit(event)">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold text-[#1B2D4F] mb-2">First Name *</label>
+                <input type="text" required placeholder="John" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white focus:border-[#FF6B2B] transition-all text-sm">
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-[#1B2D4F] mb-2">Last Name *</label>
+                <input type="text" required placeholder="Smith" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white transition-all text-sm">
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#1B2D4F] mb-2">Phone Number *</label>
+              <input type="tel" required placeholder="0400 000 000" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white transition-all text-sm">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#1B2D4F] mb-2">Email Address</label>
+              <input type="email" placeholder="john@email.com" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white transition-all text-sm">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#1B2D4F] mb-2">Suburb *</label>
+              <input type="text" required placeholder="e.g. Bondi, Chatswood, Parramatta" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white transition-all text-sm">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#1B2D4F] mb-2">Service Needed *</label>
+              <select required class="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white transition-all text-sm text-gray-700">
+                <option value="" disabled selected>Select a service...</option>
+                <option>Blocked Drain</option>
+                <option>Hot Water System — Repair</option>
+                <option>Hot Water System — Replacement</option>
+                <option>Emergency Plumbing</option>
+                <option>Leak Detection</option>
+                <option>Gas Fitting</option>
+                <option>Pipe Relining</option>
+                <option>Roof & Gutter Repairs</option>
+                <option>Strata / Commercial Plumbing</option>
+                <option>Other — I'll describe below</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#1B2D4F] mb-2">Is this urgent?</label>
+              <div class="flex gap-4">
+                <label class="flex items-center gap-2.5 cursor-pointer group">
+                  <input type="radio" name="urgent" value="yes" class="accent-[#FF6B2B] w-4 h-4">
+                  <span class="text-sm font-medium text-gray-700 group-hover:text-[#1B2D4F]">Yes — emergency</span>
+                </label>
+                <label class="flex items-center gap-2.5 cursor-pointer group">
+                  <input type="radio" name="urgent" value="no" class="accent-[#FF6B2B] w-4 h-4" checked>
+                  <span class="text-sm font-medium text-gray-700 group-hover:text-[#1B2D4F]">No — routine job</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#1B2D4F] mb-2">Tell us more</label>
+              <textarea rows="4" placeholder="Describe the issue — as much detail as you can helps us send the right plumber with the right equipment." class="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white transition-all text-sm resize-none"></textarea>
+            </div>
+            <button type="submit" class="btn-glow w-full bg-[#FF6B2B] hover:bg-[#E55A1B] text-white font-extrabold py-4 rounded-xl transition-colors text-lg shadow-lg">
+              Submit Booking Request →
+            </button>
+            <p class="text-gray-400 text-xs text-center flex items-center justify-center gap-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-3.5 h-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+              Your information is 100% secure. We'll call you back within 30 minutes.
+            </p>
+          </form>
+
+          <div id="success-msg" class="hidden bg-green-50 border border-green-200 rounded-2xl p-8 text-center mt-6">
+            <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#16a34a" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+            </div>
+            <h3 class="font-extrabold text-[#1B2D4F] text-xl mb-2">Booking Request Received!</h3>
+            <p class="text-gray-600">We'll call you back within 30 minutes to confirm your booking. For urgent jobs, call us directly on <a href="tel:1300758622" class="text-[#FF6B2B] font-bold">1300 758 622</a>.</p>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="space-y-6">
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 reveal reveal-d2">
+            <h3 class="font-extrabold text-[#1B2D4F] text-xl mb-6">Contact Details</h3>
+            <div class="space-y-5">
+              <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 bg-[#FF6B2B]/10 rounded-xl flex items-center justify-center flex-shrink-0 text-[#FF6B2B]">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-[#1B2D4F] text-sm">Phone</p>
+                  <a href="tel:1300758622" class="text-[#FF6B2B] font-extrabold text-xl hover:text-[#E55A1B] transition-colors">1300 758 622</a>
+                  <p class="text-gray-400 text-xs mt-0.5">Available 24/7 — including public holidays</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 bg-[#FF6B2B]/10 rounded-xl flex items-center justify-center flex-shrink-0 text-[#FF6B2B]">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-[#1B2D4F] text-sm">Email</p>
+                  <a href="mailto:hello@plumbco.com.au" class="text-[#1B2D4F] hover:text-[#FF6B2B] transition-colors font-medium">hello@plumbco.com.au</a>
+                  <p class="text-gray-400 text-xs mt-0.5">We reply within 2 business hours</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 bg-[#FF6B2B]/10 rounded-xl flex items-center justify-center flex-shrink-0 text-[#FF6B2B]">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-[#1B2D4F] text-sm">Service Area</p>
+                  <p class="text-gray-700 font-medium">Greater Sydney, NSW</p>
+                  <p class="text-gray-400 text-xs mt-0.5">All suburbs from CBD to outer metro</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 bg-[#FF6B2B]/10 rounded-xl flex items-center justify-center flex-shrink-0 text-[#FF6B2B]">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-[#1B2D4F] text-sm">Hours</p>
+                  <p class="text-gray-700 font-medium">24 hours a day, 7 days a week</p>
+                  <p class="text-gray-400 text-xs mt-0.5">365 days including Christmas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBURBS -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 reveal reveal-d3">
+            <h3 class="font-extrabold text-[#1B2D4F] text-xl mb-4">Areas We Cover</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Bondi</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Chatswood</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Parramatta</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Newtown</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Manly</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Strathfield</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Mosman</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Surry Hills</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Pyrmont</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Balmain</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Rozelle</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Lane Cove</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Hurstville</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Bankstown</span>
+              <span class="bg-[#F8F8F6] border border-gray-200 rounded-lg px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-[#FF6B2B]/40 hover:text-[#1B2D4F] transition-colors">Penrith</span>
+              <span class="bg-[#FF6B2B]/10 border border-[#FF6B2B]/30 rounded-lg px-3 py-1.5 text-xs font-semibold text-[#FF6B2B]">+ All Sydney Suburbs</span>
+            </div>
+          </div>
+
+          <!-- TRUST SIGNALS -->
+          <div class="bg-[#1B2D4F] rounded-2xl p-8 reveal reveal-d4">
+            <h3 class="font-extrabold text-white text-xl mb-5">Why Sydney Trusts Us</h3>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-6 h-6 bg-[#FF6B2B] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="white" class="w-3.5 h-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+                </div>
+                <div><p class="text-white font-semibold text-sm">NSW Contractor Licence #330742C</p><p class="text-white/50 text-xs">Verifiable at licence.fairtrading.nsw.gov.au</p></div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-6 h-6 bg-[#FF6B2B] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="white" class="w-3.5 h-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+                </div>
+                <div><p class="text-white font-semibold text-sm">4.9★ from 2,500+ Google Reviews</p><p class="text-white/50 text-xs">Verified customer reviews</p></div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-6 h-6 bg-[#FF6B2B] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="white" class="w-3.5 h-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+                </div>
+                <div><p class="text-white font-semibold text-sm">Master Plumbers NSW Member</p><p class="text-white/50 text-xs">Industry-recognised certification</p></div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-6 h-6 bg-[#FF6B2B] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="white" class="w-3.5 h-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+                </div>
+                <div><p class="text-white font-semibold text-sm">Fully Insured — Public Liability</p><p class="text-white/50 text-xs">You're protected on every job</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="bg-[#FF6B2B] cta-pattern py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="text-3xl lg:text-4xl font-black text-white mb-4 tracking-tight">Call 24/7 or Book Online Now</h2>
+      <p class="text-white/85 text-lg mb-8">On-site fast · Fixed price · Licensed experts · Lifetime warranty</p>
+      <a href="tel:1300758622" class="btn-glow inline-flex items-center justify-center gap-2.5 bg-white hover:bg-gray-50 text-[#FF6B2B] font-extrabold px-10 py-5 rounded-xl transition-all text-2xl shadow-2xl">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        1300 758 622
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#1B2D4F] text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2.5 mb-4"><div class="w-9 h-9 bg-[#FF6B2B] rounded-lg flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="white" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z"/></svg></div><span class="text-xl font-extrabold">Plumb<span class="text-[#FF6B2B]">Co</span></span></div>
+          <p class="text-white/60 leading-relaxed mb-6 max-w-sm">Sydney's most trusted emergency plumbers. Licensed, insured, and backed by 2,500+ five-star reviews.</p>
+          <div class="flex gap-3"><span class="badge-hover bg-white/10 border border-white/20 text-xs font-medium px-3 py-1.5 rounded-full">NSW Lic. #330742C</span><span class="badge-hover bg-white/10 border border-white/20 text-xs font-medium px-3 py-1.5 rounded-full">Master Plumbers NSW</span></div>
+        </div>
+        <div><h4 class="font-bold mb-5 text-sm uppercase tracking-wider">Quick Links</h4><ul class="space-y-3 text-white/60 text-sm"><li><a href="index.html" class="hover:text-white transition-colors">Home</a></li><li><a href="services.html" class="hover:text-white transition-colors">Services</a></li><li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li><li><a href="reviews.html" class="hover:text-white transition-colors">Reviews</a></li><li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li></ul></div>
+        <div><h4 class="font-bold mb-5 text-sm uppercase tracking-wider">Contact Us</h4><ul class="space-y-3 text-white/60 text-sm"><li><a href="tel:1300758622" class="hover:text-white transition-colors">📞 1300 758 622</a></li><li><a href="mailto:hello@plumbco.com.au" class="hover:text-white transition-colors">✉️ hello@plumbco.com.au</a></li><li>📍 Greater Sydney, NSW</li><li>🕐 24/7 — Every Day</li></ul></div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between pt-8 text-white/40 text-sm gap-4"><p>© 2025 PlumbCo Sydney. All rights reserved.</p><p>NSW Contractor Licence #330742C · ABN 00 000 000 000</p></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+    (() => { const nav = document.querySelector('nav'); window.addEventListener('scroll', () => { nav.classList.toggle('nav-scrolled', scrollY > 24); }, { passive: true }); })();
+    (() => { const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.1 }); document.querySelectorAll('.reveal').forEach(el => io.observe(el)); })();
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('booking-form').classList.add('hidden');
+      document.getElementById('success-msg').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
